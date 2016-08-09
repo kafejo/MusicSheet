@@ -16,14 +16,17 @@ class ListOfArtistsInteractorSpec: QuickSpec {
         }
 
         class ArtistsSpyStore: ArtistStoreProtocol {
+
+            static let MockupArtists = [
+                Artist(name: "Britney Spears", numberOfAlbums: 14),
+                Artist(name: "Jenifer Lopez", numberOfAlbums: 4),
+                Artist(name: "Beyonce", numberOfAlbums: 10),
+                Artist(name: "Madonna", numberOfAlbums: 20)
+            ]
+
             func fetchAllArtists(callback callback: [Artist] -> ()) {
-                let mockupArtists = [
-                    Artist(name: "Britney Spears", numberOfAlbums: 14),
-                    Artist(name: "Beyonce", numberOfAlbums: 10),
-                    Artist(name: "Jenifer Lopez", numberOfAlbums: 4),
-                    Artist(name: "Madonna", numberOfAlbums: 20)
-                ]
-                callback(mockupArtists)
+
+                callback(ArtistsSpyStore.MockupArtists)
             }
         }
 
@@ -50,6 +53,11 @@ class ListOfArtistsInteractorSpec: QuickSpec {
 
                 if let response = outputSpy.presentArtistsCalledWith {
                     expect(response.artists.count).to(equal(4))
+
+                    expect(response.artists[0]).to(equal(ArtistsSpyStore.MockupArtists[2]))
+                    expect(response.artists[1]).to(equal(ArtistsSpyStore.MockupArtists[0]))
+                    expect(response.artists[2]).to(equal(ArtistsSpyStore.MockupArtists[1]))
+                    expect(response.artists[3]).to(equal(ArtistsSpyStore.MockupArtists[3]))
                 }
             }
         }

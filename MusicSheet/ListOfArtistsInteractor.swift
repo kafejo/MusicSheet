@@ -20,8 +20,19 @@ class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
 
     func fetchArtistsOnLoad(request: ListOfArtistsRequest) {
         worker.store.fetchAllArtists { artists in
-            let response = ListOfArtistsResponse(artists: artists)
+            let sortedArtists = self.sortArtists(artists, order: request.order)
+            let response = ListOfArtistsResponse(artists: sortedArtists)
+
             self.output.presentArtists(response)
+        }
+    }
+
+    // MAKR: - Private methods
+
+    func sortArtists(artists: [Artist], order: ListOfArtistsRequest.Order) -> [Artist] {
+        switch order {
+        case .Alphabetically:
+            return artists.sort { $0.name < $1.name }
         }
     }
 }
