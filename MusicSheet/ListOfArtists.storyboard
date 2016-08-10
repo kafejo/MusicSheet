@@ -39,6 +39,39 @@
             </objects>
             <point key="canvasLocation" x="1729" y="241"/>
         </scene>
+        <!--Artist Detail View Controller-->
+        <scene sceneID="FSW-yG-rvm">
+            <objects>
+                <viewController storyboardIdentifier="ArtistDetailViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7z6-OF-z9R" customClass="ArtistDetailViewController" customModule="MusicSheet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6cm-ns-mXq"/>
+                        <viewControllerLayoutGuide type="bottom" id="f4m-GC-ExM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a5L-AD-Rit">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOU-30-wbX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f4m-GC-ExM" firstAttribute="top" secondItem="EOU-30-wbX" secondAttribute="bottom" id="CVQ-SJ-IDf"/>
+                            <constraint firstItem="EOU-30-wbX" firstAttribute="leading" secondItem="a5L-AD-Rit" secondAttribute="leading" id="IDa-AP-euh"/>
+                            <constraint firstAttribute="trailing" secondItem="EOU-30-wbX" secondAttribute="trailing" id="JYP-y7-M8p"/>
+                            <constraint firstItem="EOU-30-wbX" firstAttribute="top" secondItem="a5L-AD-Rit" secondAttribute="top" id="ycu-WD-7H7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="EOU-30-wbX" id="HPa-Qo-TFD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFm-zq-ddN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="241"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3SN-sk-wsE">
             <objects>

@@ -34,6 +34,7 @@ struct Storyboard {
         static let name: String = "ListOfArtists"
 
         static let ListOfArtistsVC = StoryboardReference<ListOfArtists, ListOfArtistsViewController>(id: "ListOfArtistsViewControllerID")
+        static let ArtistDetailVC = StoryboardReference<ListOfArtists, ArtistDetailViewController>(id: "ArtistDetailViewControllerID")
     }
 }
 

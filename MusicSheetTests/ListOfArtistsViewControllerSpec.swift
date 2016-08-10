@@ -14,14 +14,6 @@ class ListOfArtistsViewControllerSpec: QuickSpec {
         }
     }
 
-    class TableViewSpy: UITableView {
-        var reloadDataCalled = false
-        override func reloadData() {
-            super.reloadData()
-            reloadDataCalled = true
-        }
-    }
-
     override func spec() {
 
         var sot: ListOfArtistsViewController!

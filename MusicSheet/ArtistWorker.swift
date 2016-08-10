@@ -18,4 +18,5 @@ class ArtistWorker {
 
 protocol ArtistStoreProtocol {
     func fetchAllArtists(callback callback: [Artist] -> ())
+    func fetchArtistInfo(artist artist: Artist, callback: [Album] -> ())
 }
