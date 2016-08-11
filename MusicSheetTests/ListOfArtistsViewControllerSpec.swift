@@ -7,6 +7,9 @@ import UIKit
 class ListOfArtistsViewControllerSpec: QuickSpec {
 
     class ListOfArtistsInteractorSpy: ListOfArtistsViewControllerOutput {
+
+        var fetchedArtists: [Artist] = []
+
         var fetchArtistsOnLoadCalled = false
 
         func fetchArtistsOnLoad(request: ListOfArtistsRequest) {
