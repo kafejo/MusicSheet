@@ -33,8 +33,9 @@ class ArtistDetailViewController: UIViewController, ArtistDetailPresenterOutput 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.registerCellClass(AlbumCell)
+        tableView.registerNibForCellClass(AlbumCell)
         tableView.dataSource = self
+        tableView.rowHeight = 70.0
 
         fetchArtistOnLoad()
     }

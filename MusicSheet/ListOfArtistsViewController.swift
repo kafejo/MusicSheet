@@ -9,6 +9,8 @@ import UIKit
 
 protocol ListOfArtistsViewControllerOutput {
     func fetchArtistsOnLoad(request: ListOfArtistsRequest)
+
+    var fetchedArtists: [Artist] { get }
 }
 
 class ListOfArtistsViewController: UIViewController, ListOfArtistsPresenterOutput {
@@ -31,6 +33,7 @@ class ListOfArtistsViewController: UIViewController, ListOfArtistsPresenterOutpu
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.registerNibForCellClass(ArtistTableViewCell)
 
         fetchArtistsOnLoad()
@@ -67,5 +70,12 @@ extension ListOfArtistsViewController: UITableViewDataSource {
         cell.titleLabel.text = viewModel.title
 
         return cell
+    }
+}
+
+extension ListOfArtistsViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let artist = output.fetchedArtists[indexPath.row]
+        router.navigateArtistDetail(artist)
     }
 }

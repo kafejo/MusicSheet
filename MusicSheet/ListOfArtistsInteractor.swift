@@ -16,6 +16,9 @@ class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
     var output: ListOfArtistsInteractorOutput!
     var worker: ArtistWorker! = ArtistWorker(store: ArtistMockupStore())
 
+
+    var fetchedArtists: [Artist] = []
+
     // MARK: - Business logic
 
     func fetchArtistsOnLoad(request: ListOfArtistsRequest) {
@@ -23,6 +26,7 @@ class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
             let sortedArtists = self.sortArtists(artists, order: request.order)
             let response = ListOfArtistsResponse(artists: sortedArtists)
 
+            self.fetchedArtists = sortedArtists
             self.output.presentArtists(response)
         }
     }
