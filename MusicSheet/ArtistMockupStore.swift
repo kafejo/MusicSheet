@@ -22,7 +22,7 @@ class ArtistMockupStore {
     ]
 }
 
-// MARK: - ArtistStoreProtocol
+// MARK: - ArtistDetailWorker
 
 extension ArtistMockupStore: ArtistDetailWorker {
     func fetchArtistInfo(artist artist: Artist, callback: [Album] -> ()) {
@@ -30,8 +30,10 @@ extension ArtistMockupStore: ArtistDetailWorker {
     }
 }
 
+// MARK: - ListOfArtistsWorker
+
 extension ArtistMockupStore: ListOfArtistsWorker {
-    func fetchAllArtists(callback callback: [Artist] -> ()) {
-        callback(ArtistMockupStore.MockupArtists)
+    func fetchAllArtists(callback callback: Result<[Artist]> -> ()) {
+        callback(Result.Success(ArtistMockupStore.MockupArtists))
     }
 }

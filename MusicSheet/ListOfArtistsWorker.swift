@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ListOfArtistsWorker {
-    func fetchAllArtists(callback callback: [Artist] -> ())
+    func fetchAllArtists(callback callback: Result<[Artist]> -> ())
 }

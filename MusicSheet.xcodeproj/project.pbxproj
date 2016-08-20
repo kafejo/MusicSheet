@@ -13,6 +13,7 @@
 		900E205D1D68BE7800EAF799 /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 900E205C1D68BE7800EAF799 /* artists.json */; };
 		900E20601D68C2B500EAF799 /* ArtistServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900E205F1D68C2B500EAF799 /* ArtistServiceSpec.swift */; };
 		900E20621D68C32B00EAF799 /* ServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900E20611D68C32B00EAF799 /* ServiceModels.swift */; };
+		900E20651D68C6C600EAF799 /* ArtistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900E20641D68C6C600EAF799 /* ArtistStore.swift */; };
 		902FCCDD1D688F92002F3C65 /* ArtistDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902FCCDC1D688F92002F3C65 /* ArtistDetailWorker.swift */; };
 		9058DF5D1D5B206D00318CE6 /* ArtistDetailViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9058DF5C1D5B206D00318CE6 /* ArtistDetailViewControllerSpec.swift */; };
 		9058DF5F1D5B208300318CE6 /* ArtistDetailInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9058DF5E1D5B208300318CE6 /* ArtistDetailInteractorSpec.swift */; };
@@ -69,6 +70,7 @@
 		900E205C1D68BE7800EAF799 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
 		900E205F1D68C2B500EAF799 /* ArtistServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistServiceSpec.swift; sourceTree = "<group>"; };
 		900E20611D68C32B00EAF799 /* ServiceModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceModels.swift; sourceTree = "<group>"; };
+		900E20641D68C6C600EAF799 /* ArtistStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistStore.swift; sourceTree = "<group>"; };
 		902FCCDC1D688F92002F3C65 /* ArtistDetailWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailWorker.swift; sourceTree = "<group>"; };
 		9058DF5C1D5B206D00318CE6 /* ArtistDetailViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewControllerSpec.swift; sourceTree = "<group>"; };
 		9058DF5E1D5B208300318CE6 /* ArtistDetailInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistDetailInteractorSpec.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				900E20591D68BD5000EAF799 /* ArtistService.swift */,
 				90ECA6631D59E2E800107193 /* ArtistMockupStore.swift */,
+				900E20641D68C6C600EAF799 /* ArtistStore.swift */,
 			);
 			name = Artist;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				900E20621D68C32B00EAF799 /* ServiceModels.swift in Sources */,
 				90A7F4141D59C7DD002659F9 /* ListOfArtistsPresenter.swift in Sources */,
 				90AFC1C81D5B1E260017D3CF /* ArtistDetailInteractor.swift in Sources */,
+				900E20651D68C6C600EAF799 /* ArtistStore.swift in Sources */,
 				90A7F4161D59C7DD002659F9 /* ListOfArtistsViewController.swift in Sources */,
 				90A7F4151D59C7DD002659F9 /* ListOfArtistsRouter.swift in Sources */,
 				90AFC1CC1D5B1E260017D3CF /* ArtistDetailViewController.swift in Sources */,

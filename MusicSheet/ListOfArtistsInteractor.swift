@@ -14,7 +14,7 @@ protocol ListOfArtistsInteractorOutput {
 
 class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
     var output: ListOfArtistsInteractorOutput!
-    var worker: ListOfArtistsWorker! = ArtistMockupStore()
+    var worker: ListOfArtistsWorker! = ArtistStore()
 
 
     var fetchedArtists: [Artist] = []
@@ -22,12 +22,18 @@ class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
     // MARK: - Business logic
 
     func fetchArtistsOnLoad(request: ListOfArtistsRequest) {
-        worker.fetchAllArtists { artists in
-            let sortedArtists = self.sortArtists(artists, order: request.order)
-            let response = ListOfArtistsResponse(artists: sortedArtists)
+        worker.fetchAllArtists { response in
+            switch response {
+            case .Success(let artists):
+                let sortedArtists = self.sortArtists(artists, order: request.order)
+                let response = ListOfArtistsResponse(artists: sortedArtists)
 
-            self.fetchedArtists = sortedArtists
-            self.output.presentArtists(response)
+                self.fetchedArtists = sortedArtists
+                self.output.presentArtists(response)
+            case .Failure(_):
+                // TODO: Handle error
+                break
+            }
         }
     }
 
