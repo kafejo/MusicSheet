@@ -27,7 +27,7 @@ class ArtistDetailInteractorSpec: QuickSpec {
 
             it("can fetch advert details") {
                 // given
-                let mockupWorker = ArtistWorker(store: ArtistMockupStore())
+                let mockupWorker = ArtistMockupStore()
                 sot.worker = mockupWorker
                 let outputSpy = ArtistDetailInteractorOutputSpy()
                 sot.output = outputSpy

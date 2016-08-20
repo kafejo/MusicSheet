@@ -24,13 +24,14 @@ class ArtistMockupStore {
 
 // MARK: - ArtistStoreProtocol
 
-extension ArtistMockupStore: ArtistStoreProtocol {
-
-    func fetchAllArtists(callback callback: [Artist] -> ()) {
-        callback(ArtistMockupStore.MockupArtists)
-    }
-
+extension ArtistMockupStore: ArtistDetailWorker {
     func fetchArtistInfo(artist artist: Artist, callback: [Album] -> ()) {
         callback(ArtistMockupStore.Albums)
+    }
+}
+
+extension ArtistMockupStore: ListOfArtistsWorker {
+    func fetchAllArtists(callback callback: [Artist] -> ()) {
+        callback(ArtistMockupStore.MockupArtists)
     }
 }

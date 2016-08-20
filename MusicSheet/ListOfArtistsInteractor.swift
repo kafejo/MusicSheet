@@ -14,7 +14,7 @@ protocol ListOfArtistsInteractorOutput {
 
 class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
     var output: ListOfArtistsInteractorOutput!
-    var worker: ArtistWorker! = ArtistWorker(store: ArtistMockupStore())
+    var worker: ListOfArtistsWorker! = ArtistMockupStore()
 
 
     var fetchedArtists: [Artist] = []
@@ -22,7 +22,7 @@ class ListOfArtistsInteractor: ListOfArtistsViewControllerOutput {
     // MARK: - Business logic
 
     func fetchArtistsOnLoad(request: ListOfArtistsRequest) {
-        worker.store.fetchAllArtists { artists in
+        worker.fetchAllArtists { artists in
             let sortedArtists = self.sortArtists(artists, order: request.order)
             let response = ListOfArtistsResponse(artists: sortedArtists)
 

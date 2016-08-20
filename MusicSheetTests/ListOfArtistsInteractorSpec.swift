@@ -26,7 +26,7 @@ class ListOfArtistsInteractorSpec: QuickSpec {
                 // given
                 let outputSpy = ListOfArtistsOutputSpy()
                 sot.output = outputSpy
-                let worker = ArtistWorker(store: ArtistMockupStore())
+                let worker = ArtistMockupStore()
                 sot.worker = worker
 
                 // when

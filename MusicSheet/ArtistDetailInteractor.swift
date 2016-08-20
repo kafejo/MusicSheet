@@ -14,7 +14,7 @@ protocol ArtistDetailInteractorOutput {
 
 class ArtistDetailInteractor: ArtistDetailViewControllerOutput {
     var output: ArtistDetailInteractorOutput!
-    var worker: ArtistWorker! = ArtistWorker(store: ArtistMockupStore())
+    var worker: ArtistDetailWorker! = ArtistMockupStore()
 
     var artist: Artist!
 
@@ -22,7 +22,7 @@ class ArtistDetailInteractor: ArtistDetailViewControllerOutput {
 
     func fetchArtistDetailsOnLoad() {
         // Load all things for artist we need (for example albums, related artists)
-        worker.store.fetchArtistInfo(artist: artist) { albums in
+        worker.fetchArtistInfo(artist: artist) { albums in
             let response = ArtistDetailResponse(albums: albums)
             self.output.presentArtistDetails(response)
         }
