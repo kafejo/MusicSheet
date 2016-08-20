@@ -6,6 +6,8 @@ target 'MusicSheet' do
   use_frameworks!
 
   # Pods for MusicSheet
+  pod 'Alamofire', '~> 3.4'
+  pod 'Unbox', '~> 1.9'
 
   target 'MusicSheetTests' do
     inherit! :search_paths
